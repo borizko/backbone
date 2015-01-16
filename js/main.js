@@ -1,15 +1,12 @@
-var Person = function(config){
-  this.name = config.name
-  this.age = config.age
-  this.job = config.job
-}
+var Person = Backbone.Model.extend({
+  defaults: {
+    name: "Dima", 
+    age: "25",
+    job: "Web"
+  },
 
+  walk: function(){
+    return this.get("name")+ ' is walking'
+  }
 
-Person.prototype.walk = function(){
-  return this.name + 'walking...'
-}
-
-
-var nick = new Person({name: "Nick", age: "24", job: "Developer"});
-
-console.log(nick.walk())
+})
